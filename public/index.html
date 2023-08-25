@@ -3,17 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src = "http://localhost:3000/socket.io/socket.io.js"></script>
-    <script src = "/js/index.js"></script>
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <title>NodeJs Chat APP</title>
 </head>
 <body>
-    <div class="container">
-
+    <div class="message-container">
+        <ul id = "msg-list"></ul>
     </div>
-    <input id = "msg" type="text" placeholder="Enter Text"/>
-    <button id = "sendBtn">Send</button>
+    <form id = "input-container">
+        <input id = "msg" type="text" placeholder="Enter Text"/>
+        <button id = "sendBtn">Send</button>
+    </form>
+    
+    <script src = "http://localhost:3000/socket.io/socket.io.js"></script>
+    <script src = "/js/index.js"></script>
     
 </body>
 </html>

@@ -16,13 +16,14 @@ app.get("/", (req, res) => {
 
 
 io.on("connection", (socket) => {
-    console.log("a user connected")
-    socket.emit("hello from server",{
-        message : "hello from server"
+    console.log("a user connected",socket.id)
+    
+    socket.on("chat-message-sent", data => {
+        var username = data.username
+        var message = data.message
+        io.sockets.emit("chat-message", {username, message})
     })
-    socket.on("msg", (message) => {
-        console.log(message)
-    })
+    
 })
 
 server.listen("3000", () => {
